@@ -1,25 +1,46 @@
-const express= require("express")
+// const express= require("express")
+// const router=express.Router();
+// const productController=require("../controller/productController.js")
+
+// router.get("/",productController.getProducts);
+
+
+// router.get("/:id",productController.getProductById)
+
+// ////Create 
+
+// router.post("/",productController.addProduct);
+
+
+
+// //Update
+
+// router.put("/:id",productController.updateProduct);
+   
+
+// //Delete
+
+// router.delete("/:id",productController.deleteProduct);
+    
+// module.exports=router;
+
+const express=require("express");
 const router=express.Router();
 const productController=require("../controller/productController.js")
 
-router.get("/",productController.getProducts);
 
-
+//Read
+router.get("/search",productController.searchProducts)
+router.get("/",productController.getProducts)
 router.get("/:id",productController.getProductById)
 
 ////Create 
-
-router.post("/",productController.addProduct);
-
-
+router.post("/",productController.addProduct)
 
 //Update
-
-router.put("/:id",productController.updateProduct);
-   
+router.put("/:id",productController.updateProduct)
 
 //Delete
+router.delete("/:id",productController.deleteProduct)
 
-router.delete("/:id",productController.deleteProduct);
-    
-module.exports=router;
+module.exports=router
